@@ -1,0 +1,75 @@
+%  Let $\Psi_1,\ldots, \Psi_{k-1}$ be the maximum set of linearly independent non-constant terms of $\Phi_{lt}$'s in $C(\theta,z)$, $1\le l \le t \le p$ except for some $l=t$. $\Psi_k  = \Phi_{ll} $. \eqref{eq: strategy1} and \eqref{eq: strategy2} hold for $\Psi_1,\ldots, \Psi_{k-1}$ and $\Psi_k $, respectively. It's straightforward to see that our goal in \eqref{eq: strategy1} and \eqref{eq: strategy2} are now 
+% \begin{equation} \label{eq: st1}
+% \sum_{i}w_i\Psi_l(z_i)=\sum_{i}\tilde{w_i}\Psi_l(\tilde{z_i}), l=0,1,\ldots, k-1
+% \end{equation} and \begin{equation} \label{eq: st2}
+% \sum_{i}w_i\Psi_k(z_i)<\sum_{i}\tilde{w_i}\Psi_k(\tilde{z_i}) 
+% \end{equation} 
+
+% An equivalent matrix form for some $\epsilon>0$ with respect to a given design $\xi = \{(z_i, w_i), i=1,..,n\} $, and a target design  $\tilde{\xi} = \{(\tilde{z}_i, \tilde{w}_i), i=1,..,N\}$ is 
+% \begin{equation}\label{eq: tsys1}
+% \left ( \begin{array}{cccc}
+
+% \Psi_{0}(\tilde{z}_1) &\Psi_{0}(\tilde{z}_2)&\ldots &\Psi_{0}(\tilde{z}_N)\\
+% \Psi_{1}(\tilde{z}_1) &\Psi_{1}(\tilde{z}_2)&\ldots &\Psi_{1}(\tilde{z}_N)\\
+% \vdots & \vdots &&\vdots\\
+% \Psi_{k}(\tilde{z}_1) &\Psi_{k}(\tilde{z}_2)&\ldots &\Psi_{k}(\tilde{z}_N)\\
+
+% \end{array}\right) \left(\begin{array}{c}
+%   \tilde{w}_1    \\
+%   \tilde{w}_2    \\
+%   \vdots\\
+%     \tilde{w}_N    \\
+      
+% \end{array}\right) = \left(\begin{array}{c}
+%   m_0    \\
+%   m_1    \\
+%   \vdots\\
+%     m_k+\epsilon    \\
+      
+% \end{array}\right) 
+% \end{equation} where \[m_l = \sum_{i}w_i\Psi_l(z_i), l=0,1,\ldots,k.\] 
+% Given $\xi$ and support points $\{\tilde{z}_i, i=1,\ldots,N\}$, to determine $\tilde{\xi}$, we need to solve for $\{\tilde{w}_i, i=1,\ldots,N\}$. Denote the function matrix $M = \left(\Psi_l(\tilde{z}_i)\right)_{l,i}$ , $i=0,\ldots,n$, and $l=0,...,k$. Also denote $\tilde{W} = (\tilde{w}_1, \ldots, \tilde{w}_N)'$. We have system of equations\[MW = \left(\begin{array}{c}
+%   m_0    \\
+%   m_1    \\
+%   \vdots\\
+%     m_k+\epsilon    \\
+      
+% \end{array}\right) \] where we want to solve for $W$ given $M$ and $m_l$. In order for the system of equations to have unique solution, $M$ has to be full row rank. A necessary and sufficient condition is that the maximum order of non-zero minor of $M$ equals $k+1$. It mean there exist a full rank square sub-matrix $M_0$ which contains $k+1$ columns of $M$. Also, we can obtain $\tilde{w}_i$ for at most $k+1$ support points. Without loss of generality, take \{$\tilde{z}_1 \le \ldots\le\tilde{z}_{k+1} $\} as the pruned support points. Equivalently we can \begin{equation}
+%     det\left ( \begin{array}{cccc}\label{eq: tdef1}
+
+% \Psi_{0}(\tilde{z}_1) &\Psi_{0}(\tilde{z}_2)&\ldots &\Psi_{0}(\tilde{z}_{k+1})\\
+% \Psi_{1}(\tilde{z}_1) &\Psi_{1}(\tilde{z}_2)&\ldots &\Psi_{1}(\tilde{z}_{k+1})\\
+% \vdots & \vdots &&\vdots\\
+% \Psi_{k}(\tilde{z}_1) &\Psi_{k}(\tilde{z}_2)&\ldots &\Psi_{k}(\tilde{z}_{k+1})\\
+
+% \end{array}\right)>0 
+% \end{equation}or \begin{equation}
+%     det\left ( \begin{array}{cccc}\label{eq: tdef2}
+% \Psi_{0}(\tilde{z}_1) &\Psi_{0}(\tilde{z}_2)&\ldots &-\Psi_{0}(\tilde{z}_{k+1})\\
+% \Psi_{1}(\tilde{z}_1) &\Psi_{1}(\tilde{z}_2)&\ldots &-\Psi_{1}(\tilde{z}_{k+1})\\
+% \vdots & \vdots &&\vdots\\
+% \Psi_{k}(\tilde{z}_1) &\Psi_{k}(\tilde{z}_2)&\ldots &-\Psi_{k}(\tilde{z}_{k+1})\\
+% \end{array}\right)>0
+% \end{equation} for all $\tilde{z}_i \in [A,B]$. After pruning the support points to $k+1$ points, we are actually working with 
+% \begin{equation}\label{eq: tsys_pruned}
+% \left ( \begin{array}{cccc}
+
+% \Psi_{0}(\tilde{z}_1) &\Psi_{0}(\tilde{z}_2)&\ldots &\Psi_{0}(\tilde{z}_{k+1})\\
+% \Psi_{1}(\tilde{z}_1) &\Psi_{1}(\tilde{z}_2)&\ldots &\Psi_{1}(\tilde{z}_{k+1})\\
+% \vdots & \vdots &&\vdots\\
+% \Psi_{k}(\tilde{z}_1) &\Psi_{k}(\tilde{z}_2)&\ldots &\Psi_{k}(\tilde{z}_{k+1})\\
+
+% \end{array}\right) \left(\begin{array}{c}
+%   \tilde{w}_1    \\
+%   \tilde{w}_2    \\
+%   \vdots\\
+%     \tilde{w}_{k+1}    \\
+      
+% \end{array}\right) = \left(\begin{array}{c}
+%   m_0    \\
+%   m_1    \\
+%   \vdots\\
+%     m_k+\epsilon    \\
+      
+% \end{array}\right) 
+% \end{equation}
